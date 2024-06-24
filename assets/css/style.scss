@@ -1,0 +1,24 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+p {
+    text-align: justify;
+}
+
+#project_tagline {
+    text-align: justify;
+}
+
+a:hover, a:focus {
+  font-weight: normal;
+}
+
+#forkme_banner {
+    display: none;
+}
+
+footer p {
+    display: none;
+}
