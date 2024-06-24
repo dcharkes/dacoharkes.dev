@@ -1,7 +1,3 @@
----
-layout: default
----
-
 <img src="https://avatars3.githubusercontent.com/u/3601775?s=200&amp;u=7f768c577dd44784777ee5f29c1ab3be4fdc5b3d&amp;v=4" alt="Daco Harkes" style="float: right; margin-left: 10px; margin-bottom: 10px; margin-top: 0px;">
 
 I am a Software Engineer at Google Aarhus in the Dart compiler and virtual machine team.
