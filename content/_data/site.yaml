@@ -1,0 +1,10 @@
+titleBase:
+favicon: favicon.ico
+
+social:
+  - title: Email
+    url: mailto:dc.harkes@gmail.com
+  - title: GitHub
+    url: https://github.com/dcharkes
+  - title: LinkedIn
+    url: https://www.linkedin.com/in/dcharkes/

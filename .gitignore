@@ -1,2 +1,9 @@
-_site
-Gemfile.lock
+# Files and directories created by pub.
+**/doc/api/
+.dart_tool/
+
+# Jaspr output
+/build/
+
+# Miscellaneous
+.DS_Store

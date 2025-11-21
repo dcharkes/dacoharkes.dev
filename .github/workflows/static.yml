@@ -1,0 +1,43 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: ['master'] # Kept your branch as 'master'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  deployments: write # Allows Cloudflare to update the deployment status in GitHub
+
+concurrency:
+  group: 'cloudflare'
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Install Dependencies
+        run: dart pub get
+
+      - name: Build Jaspr
+        run: |
+          dart pub global activate jaspr_cli
+          jaspr build --verbose
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: dacoharkes
+          directory: build/jaspr
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
